@@ -55,10 +55,10 @@ In a Bash or Zsh terminal, download the two built release packages and install t
 mkdir -p /tmp/codex-folders-install
 cd /tmp/codex-folders-install
 
-curl -fLO https://github.com/Cheaux/codex-command-extensions/releases/download/v0.1.1/codex-terminal-extensions-0.1.1.tgz
+curl -fLO https://github.com/Cheaux/codex-command-extensions/releases/download/v0.1.2/codex-terminal-extensions-0.1.2.tgz
 curl -fLO https://github.com/Cheaux/codex-folders/releases/download/v0.1.1/codex-folders-0.1.1.tgz
 
-npm install --global --prefix "$HOME/.local" --ignore-scripts ./codex-terminal-extensions-0.1.1.tgz ./codex-folders-0.1.1.tgz
+npm install --global --prefix "$HOME/.local" --ignore-scripts ./codex-terminal-extensions-0.1.2.tgz ./codex-folders-0.1.1.tgz
 export PATH="$HOME/.local/bin:$PATH"
 
 codex-folders install

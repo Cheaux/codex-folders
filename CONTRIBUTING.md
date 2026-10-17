@@ -1,6 +1,6 @@
 # Contributing
 
-Use Node.js 24+ and Python 3. Install the released Codex Command Extensions v0.1.0 package on PATH for integration checks; the CI workflow demonstrates checksum-verified setup.
+Use Node.js 24+ and Python 3. Install the released Codex Command Extensions v0.1.2 package on PATH for integration checks; the CI workflow demonstrates checksum-verified setup.
 
 ```sh
 npm ci
