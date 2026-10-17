@@ -1,0 +1,22 @@
+title: Codex Folders
+description: Organize Codex CLI chats into folders, start chats inside projects, and share project instructions and memory from the terminal.
+url: https://cheaux.github.io
+baseurl: /codex-folders
+lang: en
+theme: jekyll-theme-minimal
+repository: Cheaux/codex-folders
+show_downloads: false
+author:
+  name: Cheaux
+  url: https://github.com/Cheaux
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /assets/social-card.png
+exclude:
+  - README.md

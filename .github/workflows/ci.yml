@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: sh scripts/install-test-host.sh
+      - run: npm run check
+      - run: npm run build
+      - run: npm test
+        env:
+          CODEX_THREAD_ID: fixture-ci-thread
+      - run: npm run test:pty
+      - run: npm run test:package

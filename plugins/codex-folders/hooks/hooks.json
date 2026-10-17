@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "SessionStart": [{ "hooks": [{
+      "type": "command", "command": "codex-folders hook", "timeout": 3,
+      "additionalContextLimit": 6000, "statusMessage": "Loading project context"
+    }] }],
+    "UserPromptSubmit": [{ "hooks": [{
+      "type": "command", "command": "codex-folders hook", "timeout": 3,
+      "additionalContextLimit": 6000
+    }] }]
+  }
+}

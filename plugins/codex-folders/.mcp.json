@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "folders": { "command": "codex-folders", "args": ["serve"] }
+  }
+}

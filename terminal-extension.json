@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "codex-folders",
+  "commands": [
+    {
+      "name": "/folders",
+      "description": "Browse chat folders",
+      "shortcut": "f",
+      "action": {
+        "type": "overlay", "executable": "${NODE}",
+        "args": ["${EXTENSION_ROOT}/dist/cli.js", "terminal-browser"],
+        "env": { "CODEX_FOLDERS_CODEX_BIN": "${CODEX_BIN}" }
+      }
+    },
+    {
+      "name": "/resume", "description": "Browse chat folders", "suggest": false, "replaceNative": true,
+      "action": {
+        "type": "overlay", "executable": "${NODE}",
+        "args": ["${EXTENSION_ROOT}/dist/cli.js", "terminal-browser"],
+        "env": { "CODEX_FOLDERS_CODEX_BIN": "${CODEX_BIN}" }
+      }
+    },
+    {
+      "name": "/resumedbg", "description": "Open the original chat picker", "preferNative": true,
+      "action": { "type": "native-alias", "target": "/resume" }
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+---
+---
+@import "jekyll-theme-minimal";
+.docs-nav { display: flex; flex-wrap: wrap; gap: .6rem 1rem; padding-bottom: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid #ddd; }
+.docs-nav a { font-weight: 600; }
+section { overflow-wrap: break-word; }
+pre { overflow-x: auto; }
+table { display: block; overflow-x: auto; }
+img { max-width: 100%; height: auto; }
+:focus-visible { outline: 2px solid #236b76; outline-offset: 3px; }
+@media (max-width: 480px) { body { padding: 18px; } pre { font-size: 12px; } }

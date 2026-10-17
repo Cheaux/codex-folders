@@ -1,0 +1,17 @@
+name: Bug report
+description: Report a reproducible Codex Folders problem.
+body:
+  - type: textarea
+    id: versions
+    attributes:
+      label: Versions and environment
+      description: OS, terminal emulator, Node, Python, Codex CLI, Folders, and terminal host versions. Redact private paths.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction, expected result, and actual result
+      description: Use fictional chats. Do not attach database files, credentials, or private conversation text.
+    validations:
+      required: true

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+artifacts/
+_site/
+.jekyll-cache/
+.sass-cache/
+.terminal-host/
+validation/
+coverage/
+*.tgz
+*.db*
+*.pyc
+__pycache__/
+.env
+.env.*
+.DS_Store

@@ -1,0 +1,10 @@
+{
+  "name": "codex-folders-local",
+  "interface": { "displayName": "Codex Folders" },
+  "plugins": [{
+    "name": "codex-folders",
+    "source": { "source": "local", "path": "./plugins/codex-folders" },
+    "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+    "category": "Productivity"
+  }]
+}

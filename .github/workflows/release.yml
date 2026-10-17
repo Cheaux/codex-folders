@@ -1,0 +1,39 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: sh scripts/install-test-host.sh
+      - name: Verify tag and package versions
+        run: node -e 'const p=require("./package.json"); if (process.env.GITHUB_REF_NAME !== `v${p.version}`) process.exit(1)'
+      - run: npm run check
+      - run: npm run build
+      - run: npm test
+        env:
+          CODEX_THREAD_ID: fixture-ci-thread
+      - run: npm run test:pty
+      - run: npm run test:package
+      - name: Build release archive and checksum
+        run: |
+          mkdir -p artifacts
+          npm pack --pack-destination artifacts
+          cd artifacts
+          sha256sum codex-folders-*.tgz > SHA256SUMS
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" artifacts/*.tgz artifacts/SHA256SUMS --verify-tag --title "Codex Folders $RELEASE_TAG" --notes-file RELEASE_NOTES.md --latest

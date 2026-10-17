@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+import readline from 'node:readline';
+if (process.argv[2] === '--version') { console.log('codex-cli fixture'); process.exit(0); }
+if (process.env.CODEX_FOLDERS_TEST_TERMINAL && process.argv[2] !== 'app-server') {
+  let draft = '', pending = '', picker = false, nativeCount = 0, offset = 0, focus = 0;
+  const resumed = process.argv[2] === 'resume';
+  let title = resumed ? `Resumed ${process.argv[3]}` : 'Original chat';
+  const label = resumed ? `FIXTURE_RESUMED ${process.argv[3]}` : 'FIXTURE_ORIGINAL';
+  process.stdin.setRawMode(true); process.stdin.resume();
+  const modes = () => process.stdout.write(`\x1b[?${resumed ? 1002 : 1003}h\x1b[?1006h\x1b[?1004h\x1b[?1007l\x1b[?2004h`);
+  const setTitle = () => process.stdout.write(`\x1b]0;${title}\x1b\\`);
+  const draw = () => process.stdout.write(`\x1b[2J\x1b[H${label}\x1b[3;1H${picker ? `FIXTURE_NATIVE_PICKER ${nativeCount}` : `Transcript offset ${offset}`}\x1b[4;1HFocus reports ${focus}\x1b[20;1H› ${draft}`);
+  modes(); setTitle();
+  draw();
+  process.stdin.on('data', data => {
+    pending += data.toString();
+    while (pending) {
+      if (pending.startsWith('\x1b[')) {
+        const match = /^\x1b\[[<\d;]*[A-Za-z~]/.exec(pending);
+        if (!match) break;
+        const key = match[0]; pending = pending.slice(key.length);
+        const mouse = /^\x1b\[<(\d+);\d+;\d+M$/.exec(key);
+        if (mouse && (Number(mouse[1]) & 64)) offset += Number(mouse[1]) & 1 ? -1 : 1;
+        else if (key === '\x1b[A') draft = 'previous message';
+        else if (key === '\x1b[I' || key === '\x1b[O') focus++;
+        continue;
+      }
+      const byte = pending.charCodeAt(0); pending = pending.slice(1);
+      if (byte === 3 || byte === 4) process.exit(0);
+      else if (byte === 27 && picker) { picker = false; modes(); }
+      else if (byte === 18) { title = `${title} renamed`; setTitle(); }
+      else if (byte === 21) draft = '';
+      else if (byte === 13) {
+        if (picker) { picker = false; title = 'Native selected chat'; setTitle(); }
+        else if (draft === '/resume') { picker = true; nativeCount++; }
+        else process.stdout.write(`\x1b[5;1HSUBMITTED:${draft}`);
+        draft = ''; continue;
+      }
+      else if (byte === 127) draft = draft.slice(0, -1);
+      else if (byte >= 32 && byte < 127) draft += String.fromCharCode(byte);
+    }
+    draw();
+  });
+  await new Promise(() => {});
+}
+if (process.argv[2] === 'resume') { console.log(`FIXTURE_RESUMED ${process.argv[3]}`); process.exit(0); }
+if (process.argv[2] === '-C') { console.log(`FIXTURE_NEW_CHAT ${process.argv[3]}`); process.exit(0); }
+const threads = [{ id: 'thread-a', name: 'Architecture decision', cwd: '/fixture', updatedAt: 5 }, { id: 'thread-b', name: 'Implementation follow-up', cwd: '/fixture', updatedAt: 5 }];
+for await (const line of readline.createInterface({ input: process.stdin })) {
+  const message = JSON.parse(line); if (message.id === undefined) continue;
+  let result = {};
+  if (message.method === 'thread/list') result = { data: message.params.archived ? [] : threads, nextCursor: null };
+  else if (message.method === 'thread/read') {
+    const thread = threads.find(t => t.id === message.params.threadId);
+    if (!thread) { console.log(JSON.stringify({ id: message.id, error: { code: -32602, message: 'Thread not found' } })); continue; }
+    result = { thread };
+  } else if (message.method === 'thread/turns/list') result = { data: [{ id: 'turn-1', items: [{ id: 'user-1', type: 'userMessage', content: [{ type: 'text', text: 'Which storage engine?' }] }, { id: 'answer-1', type: 'agentMessage', phase: 'final_answer', text: 'Choose SQLite, with a transaction per move.' }, { id: 'private-1', type: 'reasoning', text: 'Do not index this.' }] }], nextCursor: null };
+  else if (message.method === 'thread/start') { const thread = { id: 'new-thread', cwd: message.params.cwd, updatedAt: 6 }; threads.push(thread); result = { thread }; }
+  console.log(JSON.stringify({ id: message.id, result }));
+}

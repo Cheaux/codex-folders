@@ -1,0 +1,9 @@
+{
+  "name": "codex-folders",
+  "version": "0.1.0",
+  "description": "Organize Codex chats in project folders and recall shared project context.",
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/hooks.json",
+  "license": "MIT"
+}
