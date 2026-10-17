@@ -1,9 +1,51 @@
 {
   "name": "codex-folders",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Organize Codex chats in project folders and recall shared project context.",
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "hooks": "./hooks/hooks.json",
-  "license": "MIT"
+  "license": "MIT",
+  "author": {
+    "name": "Cheaux",
+    "url": "https://github.com/Cheaux"
+  },
+  "homepage": "https://github.com/Cheaux/codex-folders",
+  "repository": "https://github.com/Cheaux/codex-folders",
+  "keywords": [
+    "codex",
+    "codex-cli",
+    "codex-plugin",
+    "chat-folders",
+    "conversation-manager",
+    "project-memory",
+    "shared-context",
+    "mcp",
+    "terminal",
+    "openai"
+  ],
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Codex Folders",
+    "shortDescription": "Chat folders & project memory",
+    "longDescription": "Organize saved Codex conversations into folders and projects, move chats, and maintain shared project instructions and revisioned memory through fourteen local MCP tools. Search and read source messages within a project. Requires the standalone Codex Folders CLI, Node 24+, and compatible local Codex chat APIs. Terminal /folders, /resume, and /resumedbg commands additionally require Codex Command Extensions. Linux is verified; macOS is untested and the Windows terminal backend is unavailable. The official-directory ZIP excludes lifecycle hooks, so project context must be loaded and saved explicitly with tools; automatic hook injection is available only through the separate manual installation. Community project by Cheaux; not maintained or endorsed by OpenAI.",
+    "developerName": "Cheaux",
+    "category": "Productivity",
+    "capabilities": [
+      "Conversation folders",
+      "Shared project context",
+      "Project memory and search"
+    ],
+    "websiteURL": "https://github.com/Cheaux/codex-folders",
+    "supportURL": "https://github.com/Cheaux/codex-folders/issues",
+    "privacyPolicyURL": "https://github.com/Cheaux/codex-folders/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/Cheaux/codex-folders/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Organize my Codex chats into project folders.",
+      "Load the shared context for this project."
+    ],
+    "logo": "./assets/icon.svg",
+    "composerIcon": "./assets/icon.svg",
+    "brandColor": "#202b3c"
+  }
 }

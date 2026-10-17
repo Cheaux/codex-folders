@@ -25,7 +25,7 @@ Create folders with **N**, move chats with **M**, and start a new chat inside th
 | Ctrl+X, then F | Open folders while preserving your draft. |
 | Ctrl+X, then B | Switch retained terminal views. |
 
-These commands come from the separate [Codex Terminal Extensions](https://github.com/Cheaux/codex-terminal-extensions) host and the Folders provider. The plugin's standalone browser, CLI, and MCP tools also work without that host.
+These commands come from the separate [Codex Command Extensions](https://github.com/Cheaux/codex-command-extensions) host and the Folders provider. The plugin's standalone browser, CLI, and MCP tools also work without that host.
 
 ## Projects that remember decisions
 

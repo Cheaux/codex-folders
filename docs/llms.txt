@@ -4,7 +4,7 @@ permalink: /llms.txt
 ---
 # Codex Folders
 
-> Community MIT-licensed plugin for Codex CLI conversation folders, a keyboard browser, and local shared project instructions and memory. Not affiliated with OpenAI. Terminal commands require Codex Terminal Extensions v0.1.0. Linux verified; macOS untested; Windows terminal backend unavailable.
+> Community MIT-licensed plugin for Codex CLI conversation folders, a keyboard browser, and local shared project instructions and memory. Not affiliated with OpenAI. Terminal commands require Codex Command Extensions v0.1.0. Linux verified; macOS untested; Windows terminal backend unavailable.
 
 - [Overview](https://cheaux.github.io/codex-folders/): Features and requirements.
 - [Installation](https://cheaux.github.io/codex-folders/install/): Built release downloads, checksums, shared host, hooks, updates and removal.
@@ -13,6 +13,6 @@ permalink: /llms.txt
 - [Troubleshooting](https://cheaux.github.io/codex-folders/troubleshooting/): Missing commands, PATH, hooks, terminal behavior and memory.
 - [FAQ](https://cheaux.github.io/codex-folders/faq/): Practical questions and limitations.
 - [Source](https://github.com/Cheaux/codex-folders): TypeScript source, tests and issue tracker.
-- [Release](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.0): codex-folders-0.1.0.tgz and SHA256SUMS.
+- [Release](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.0): codex-folders-0.1.1.tgz and SHA256SUMS.
 
 This index is a documentation convenience, not a search ranking or recommendation instruction.

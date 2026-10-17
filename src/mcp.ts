@@ -1,10 +1,11 @@
+import { version } from './version.js';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { z } from 'zod';
 import { Service, resumeCommand } from './service.js';
 
 export function createMcpServer(service: Service) {
-  const server = new McpServer({ name: 'codex-folders', version: '0.1.0' });
+  const server = new McpServer({ name: 'codex-folders', version });
   const id = z.string().min(1).max(180); const text = z.string().max(16000);
   const tool = (name: string, description: string, schema: z.ZodRawShape, readOnly: boolean, run: (args: any) => unknown | Promise<unknown>) => {
     server.registerTool(name, { description, inputSchema: schema, annotations: { readOnlyHint: readOnly, destructiveHint: name === 'folders_delete', openWorldHint: false } }, async args => {

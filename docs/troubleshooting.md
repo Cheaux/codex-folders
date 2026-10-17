@@ -17,7 +17,7 @@ command -v codex
 
 ## Folders commands do not appear
 
-Install Codex Terminal Extensions, run `codex-folders enable`, and open a new `codex` terminal. Confirm `~/.local/bin` precedes the original CLI directory in PATH. Terminal status should show an enabled shared launcher and a `codex-folders` provider. Existing wrappers keep the code loaded when they started; you do not have to close active work to open a new one.
+Install Codex Command Extensions, run `codex-folders enable`, and open a new `codex` terminal. Confirm `~/.local/bin` precedes the original CLI directory in PATH. Terminal status should show an enabled shared launcher and a `codex-folders` provider. Existing wrappers keep the code loaded when they started; you do not have to close active work to open a new one.
 
 The native Codex plugin alone supplies MCP tools, hooks, and the skill. The shared host supplies slash-command interception and suggestions. See [installation]({{ '/install/' | relative_url }}).
 

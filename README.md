@@ -25,7 +25,7 @@
 
 ## Commands inside Codex
 
-These commands require [Codex Terminal Extensions](https://github.com/Cheaux/codex-terminal-extensions), the shared terminal host, and `codex-folders enable`.
+These commands require [Codex Command Extensions](https://github.com/Cheaux/codex-command-extensions), the shared terminal host, and `codex-folders enable`.
 
 | Command or key | What it does |
 | --- | --- |
@@ -55,10 +55,10 @@ In a Bash or Zsh terminal, download the two built release packages and install t
 mkdir -p /tmp/codex-folders-install
 cd /tmp/codex-folders-install
 
-curl -fLO https://github.com/Cheaux/codex-terminal-extensions/releases/download/v0.1.0/codex-terminal-extensions-0.1.0.tgz
-curl -fLO https://github.com/Cheaux/codex-folders/releases/download/v0.1.0/codex-folders-0.1.0.tgz
+curl -fLO https://github.com/Cheaux/codex-command-extensions/releases/download/v0.1.1/codex-terminal-extensions-0.1.1.tgz
+curl -fLO https://github.com/Cheaux/codex-folders/releases/download/v0.1.1/codex-folders-0.1.1.tgz
 
-npm install --global --prefix "$HOME/.local" --ignore-scripts ./codex-terminal-extensions-0.1.0.tgz ./codex-folders-0.1.0.tgz
+npm install --global --prefix "$HOME/.local" --ignore-scripts ./codex-terminal-extensions-0.1.1.tgz ./codex-folders-0.1.1.tgz
 export PATH="$HOME/.local/bin:$PATH"
 
 codex-folders install
@@ -128,3 +128,7 @@ npm run test:package
 The PTY and package checks require `codex-terminal` from the pinned host release on `PATH` (see the CI workflow). Tests use synthetic chats and isolated temporary stores. See [CONTRIBUTING.md](CONTRIBUTING.md) for architecture and release instructions.
 
 [MIT license](LICENSE). Bundled third-party license notices are included in release packages under `dist/THIRD_PARTY_NOTICES.txt`.
+
+## Official directory status
+
+GitHub releases are available. This plugin has **not been submitted to or approved for the official ChatGPT/Codex plugin directory**. [Submission preparation](submission/README.md), [data handling](PRIVACY.md), and [license/service information](TERMS.md) are public.

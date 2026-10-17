@@ -30,10 +30,11 @@ jobs:
         run: |
           mkdir -p artifacts
           npm pack --pack-destination artifacts
+          npm run package:directory
           cd artifacts
-          sha256sum codex-folders-*.tgz > SHA256SUMS
+          sha256sum codex-folders-*.tgz *.zip > SHA256SUMS
       - name: Publish GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
-        run: gh release create "$RELEASE_TAG" artifacts/*.tgz artifacts/SHA256SUMS --verify-tag --title "Codex Folders $RELEASE_TAG" --notes-file RELEASE_NOTES.md --latest
+        run: gh release create "$RELEASE_TAG" artifacts/*.tgz artifacts/*.zip artifacts/SHA256SUMS --verify-tag --title "Codex Folders $RELEASE_TAG" --notes-file RELEASE_NOTES.md --latest

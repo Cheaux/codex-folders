@@ -1,3 +1,4 @@
+import { version } from './version.js';
 import { parseArgs } from 'node:util';
 import { dirname, resolve, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -11,7 +12,7 @@ import { browse, clean } from './browser.js';
 import { launch } from './launcher.js';
 import { enableLauncher, disableLauncher, launcherStatus, registerTerminal } from './launcher-install.js';
 
-const help = `Codex Folders 0.1.0 — local chat projects and shared context
+const help = `Codex Folders ${version} — local chat projects and shared context
 
 codex-folders                         Open the keyboard folder browser
 codex-folders install                 Register and install the local Codex plugin
@@ -39,7 +40,7 @@ In Codex: use $codex-folders:chat-folders or ask to organize chats or recall pro
 Browser: Ctrl+Right/m move · Ctrl+Left/u up · Space select · z undo · ? help.
 Automatic context loading requires review and trust in Codex's /hooks screen.
 Launcher: /folders or Ctrl+X then F opens folders; /resume opens the folder picker.
-Codex Terminal Extensions owns the shared launcher. Remote independently registers /qr.
+Codex Command Extensions owns the shared launcher. Remote independently registers /qr.
 Ctrl+X then B returns to another open session. Existing Codex sessions are untouched.
 `;
 function currentThread() {
@@ -60,7 +61,7 @@ function print(value: any, json: boolean) {
 async function run() {
   const [command = 'browse', ...rest] = process.argv.slice(2);
   if (['--help', '-h', 'help'].includes(command)) { console.log(help); return; }
-  if (command === '--version') { console.log('0.1.0'); return; }
+  if (command === '--version') { console.log(version); return; }
   if (command === 'launch') { await launch(rest[0] === '--' ? rest.slice(1) : rest); return; }
   if (command === 'enable') { print(enableLauncher(), true); return; }
   if (command === 'disable') { print(disableLauncher(), true); return; }
@@ -96,7 +97,7 @@ async function run() {
     codexCommand(['plugin', 'marketplace', 'add', root, '--json']);
     const result = codexCommand(['plugin', 'add', 'codex-folders@codex-folders-local', '--json']);
     const store = new Store(); store.close();
-    print({ installed: true, result: JSON.parse(result), terminal: registerTerminal(true), next: ['Install Codex Terminal Extensions, then run codex-folders enable and open a new Codex session.', 'Open /hooks and review/trust the two Codex Folders hooks to enable automatic project context.', 'Use /folders or Ctrl+X then F in the terminal launcher, or ask Codex to create a project folder.'] }, true); return;
+    print({ installed: true, result: JSON.parse(result), terminal: registerTerminal(true), next: ['Install Codex Command Extensions, then run codex-folders enable and open a new Codex session.', 'Open /hooks and review/trust the two Codex Folders hooks to enable automatic project context.', 'Use /folders or Ctrl+X then F in the terminal launcher, or ask Codex to create a project folder.'] }, true); return;
   }
   if (command === 'uninstall') {
     disableLauncher();

@@ -13,7 +13,7 @@ With Codex Folders and the shared terminal host enabled, type `/folders`, press 
 
 ## Why is there a separate terminal host?
 
-Codex Terminal Extensions provides one launcher for command interception, suggestions, and retained terminal views. Folders registers its feature; another plugin can register its own commands independently. This prevents each feature from installing a competing wrapper. Folders' standalone browser and MCP tools work without the host.
+Codex Command Extensions provides one launcher for command interception, suggestions, and retained terminal views. Folders registers its feature; another plugin can register its own commands independently. This prevents each feature from installing a competing wrapper. Folders' standalone browser and MCP tools work without the host.
 
 ## Does this replace the official Codex executable?
 

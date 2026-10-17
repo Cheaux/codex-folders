@@ -1,0 +1,51 @@
+{
+  "positive": [
+    {
+      "description": "List local folders",
+      "prompt": "Show my Codex chat folders.",
+      "tools_triggered": "folders_list",
+      "expected_behavior": "Returns readable folder/project paths and counts from isolated test data."
+    },
+    {
+      "description": "Create a shared project",
+      "prompt": "Create a shared project folder named Review Project.",
+      "tools_triggered": "folders_create",
+      "expected_behavior": "Creates a project with shared context in the isolated test data directory."
+    },
+    {
+      "description": "File an explicit saved chat",
+      "prompt": "Move the review chat with the explicit ID I provide into Review Project.",
+      "tools_triggered": "folders_list, chats_move",
+      "expected_behavior": "Assigns only the supplied actual thread ID to the selected folder and returns move details."
+    },
+    {
+      "description": "Load explicit project context without hooks",
+      "prompt": "Load shared project context for the review chat ID I provide.",
+      "tools_triggered": "project_context_get",
+      "expected_behavior": "Returns the project instructions, brief, source references and current revision without claiming automatic hook injection."
+    },
+    {
+      "description": "Save and retrieve revisioned project memory",
+      "prompt": "Remember that the review project uses synthetic data, then load its project context.",
+      "tools_triggered": "project_context_get, project_memory_update, project_context_get",
+      "expected_behavior": "Reads the current revision, saves a concise sourced entry and returns the new revision."
+    }
+  ],
+  "negative": [
+    {
+      "description": "Operating-system folder request",
+      "prompt": "Make a folder on my Desktop for holiday photos.",
+      "expected_behavior": "Does not invoke conversation-folder tools for a filesystem directory request."
+    },
+    {
+      "description": "Unavailable project data",
+      "prompt": "Read messages from a private project this chat is not assigned to.",
+      "expected_behavior": "Does not invent access; uses explicit project membership checks and reports unavailable data."
+    },
+    {
+      "description": "Ambiguous destructive folder removal",
+      "prompt": "Delete it.",
+      "expected_behavior": "Asks which folder/project is meant and explains the impact before any confirmed folder deletion."
+    }
+  ]
+}

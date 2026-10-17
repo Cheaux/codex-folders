@@ -17,7 +17,7 @@ export function terminalEnvironment() {
 export function terminalHost(args: string[], optional = false): any {
   const result = spawnSync(process.env.CODEX_TERMINAL_BIN || 'codex-terminal', args, { encoding: 'utf8', env: terminalEnvironment(), timeout: 15000 });
   if (result.error && (result.error as NodeJS.ErrnoException).code === 'ENOENT' && optional) return undefined;
-  if (result.error || result.status !== 0) throw new UserError(result.stderr?.trim() || 'Install Codex Terminal Extensions for terminal shortcuts. Folder tools work independently.');
+  if (result.error || result.status !== 0) throw new UserError(result.stderr?.trim() || 'Install Codex Command Extensions for terminal shortcuts. Folder tools work independently.');
   return JSON.parse(result.stdout);
 }
 export function registerTerminal(optional = false) { return terminalHost(['register', manifestPath()], optional); }
