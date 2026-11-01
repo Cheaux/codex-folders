@@ -1,6 +1,6 @@
 ---
 title: Codex chat folders FAQ
-description: Answers about folders inside Codex CLI, shared project memory, default resume, terminal host dependency, operating systems, and removal.
+description: Answers about Codex CLI chat folders, shared project memory, resume behavior, the terminal host, tested platforms and safe removal.
 permalink: /faq/
 ---
 {% include nav.html %}

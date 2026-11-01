@@ -17,6 +17,8 @@ class Page(HTMLParser):
         super().__init__()
         self.links, self.canonical, self.description, self.image = [], [], [], []
         self.ids = set()
+        self.h1_count = 0
+        self.main_count = 0
         self.schemas = []
         self.in_schema = False
         self.schema_text = ""
@@ -24,6 +26,8 @@ class Page(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         values = dict(attrs)
+        if tag == "h1": self.h1_count += 1
+        if tag == "main": self.main_count += 1
         if tag == "script" and values.get("type") == "application/ld+json":
             self.in_schema = True
             self.schema_text = ""
@@ -61,6 +65,10 @@ for page in pages:
     assert doc.canonical == [f"{origin}{base}/{page}"], (page, doc.canonical)
     assert len(doc.description) == 1 and doc.description[0], f"Missing description: {page}"
     assert doc.image == [f"{origin}{base}/assets/social-card.png"], (page, doc.image)
+    assert doc.h1_count == 1, (page, "H1 count", doc.h1_count)
+    assert doc.main_count == 1, (page, "main count", doc.main_count)
+    assert "main-content" in doc.ids
+    assert "#main-content" in doc.links
     parsed[page] = doc
 
 home_schemas = [s for s in parsed[""].schemas if s.get("@type") == "SoftwareSourceCode"]

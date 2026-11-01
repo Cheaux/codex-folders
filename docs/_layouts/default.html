@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="wrapper">
+      <header>
+        <p class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+        <p>{{ site.description }}</p>
+        <p class="view"><a href="https://github.com/{{ site.repository }}">View source on GitHub<small>{{ site.repository }}</small></a></p>
+      </header>
+      <main id="main-content" tabindex="-1">
+        {{ content }}
+      </main>
+      <footer>
+        <p>Maintained by <a href="{{ site.author.url }}">{{ site.author.name }}</a>.</p>
+        <p><a href="https://github.com/{{ site.repository }}/blob/main/LICENSE">MIT license</a> · <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a> · <a href="{{ '/llms.txt' | relative_url }}">Documentation index</a></p>
+        <p><small>Hosted on GitHub Pages. Styles from <a href="https://github.com/pages-themes/minimal">Minimal</a>.</small></p>
+      </footer>
+    </div>
+  </body>
+</html>

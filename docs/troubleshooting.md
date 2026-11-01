@@ -1,6 +1,6 @@
 ---
 title: Troubleshoot Codex Folders
-description: Fix missing folders commands, PATH and shared host setup, hooks, original resume access, terminal presentation, and installation problems.
+description: Fix missing Codex Folders commands, launcher PATH, optional hooks, original resume access and common installation problems.
 permalink: /troubleshooting/
 ---
 {% include nav.html %}

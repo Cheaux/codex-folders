@@ -1,6 +1,6 @@
 ---
 title: Organize Codex CLI chats into folders
-description: Create Codex chat folders, move conversations, and start chats inside projects with shared instructions and local memory.
+description: Organize Codex CLI chats into folders, resume conversations and start project chats with shared instructions and local memory.
 permalink: /
 ---
 {% include nav.html %}
@@ -9,7 +9,7 @@ permalink: /
 
 Organize Codex CLI conversations into folders and work with shared project context in the same terminal.
 
-![Synthetic Codex Folders browser with Website and Research projects]({{ '/assets/folders-demo.png' | relative_url }})
+<img src="{{ '/assets/folders-demo.png' | relative_url }}" width="1240" height="760" alt="Synthetic Codex Folders browser with Website and Research projects.">
 
 Create folders with **N**, move chats with **M**, and start a new chat inside the selected folder with **C**. **All chats** shows conversations outside folders. Filed chats stay in their folders; Codex-archived chats remain hidden.
 

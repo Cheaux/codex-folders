@@ -1,6 +1,6 @@
 ---
 title: Install Codex Folders
-description: Install built Codex Folders and shared terminal host releases, enable in-terminal commands, review hooks, update, or remove the plugin.
+description: Install Codex Folders and its shared terminal host. Enable slash commands, review optional hooks, check downloads, update or remove.
 permalink: /install/
 ---
 {% include nav.html %}

@@ -1,6 +1,6 @@
 ---
 title: Shared project instructions and memory
-description: Understand project folder inheritance, shared briefs, scoped search, source references, local storage, and hook trust.
+description: Learn how Codex Folders shares project instructions and local briefs across chats, with revision checks, scoped search and source references.
 permalink: /context/
 ---
 {% include nav.html %}
