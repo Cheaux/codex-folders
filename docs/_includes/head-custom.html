@@ -1,5 +1,30 @@
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
 <meta name="theme-color" content="#162c30">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | absolute_url }}">
+<link rel="alternate" type="text/plain" title="Project documentation index" href="{{ '/llms.txt' | absolute_url }}">
+{% if page.url == '/' %}
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Codex Folders","description":"Local conversation folders, an in-terminal chat browser, and shared project context for Codex CLI.","codeRepository":"https://github.com/Cheaux/codex-folders","url":"https://cheaux.github.io/codex-folders/","license":"https://opensource.org/license/mit","programmingLanguage":"TypeScript","runtimePlatform":"Node.js 24+","version":"0.1.0","author":{"@type":"Person","name":"Cheaux","url":"https://github.com/Cheaux"}}
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "Codex Folders",
+  "description": "Organize Codex CLI chats into folders with a terminal conversation browser, shared project instructions and local memory. Linux verified; community plugin.",
+  "codeRepository": "https://github.com/Cheaux/codex-folders",
+  "url": "https://cheaux.github.io/codex-folders/",
+  "license": "https://github.com/Cheaux/codex-folders/blob/main/LICENSE",
+  "programmingLanguage": [
+    "TypeScript"
+  ],
+  "runtimePlatform": "Node.js 24+",
+  "version": {{ site.project_version | jsonify }},
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "Cheaux",
+    "url": "https://github.com/Cheaux"
+  }
+}
 </script>
+{% endif %}

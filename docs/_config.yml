@@ -1,5 +1,6 @@
 title: Codex Folders
-description: Organize Codex CLI chats into folders, start chats inside projects, and share project instructions and memory from the terminal.
+description: Organize Codex CLI chats into folders with a terminal conversation browser, shared project instructions and local memory. Linux verified; community plugin.
+project_version: "0.1.1"
 url: https://cheaux.github.io
 baseurl: /codex-folders
 lang: en

@@ -6,7 +6,7 @@
 
 **Create folders, move conversations, and start chats inside a project without leaving Codex.** Codex Folders adds a keyboard chat browser and optional shared instructions and project memory to the Codex CLI.
 
-[Documentation](https://cheaux.github.io/codex-folders/) · [Installation guide](https://cheaux.github.io/codex-folders/install/) · [Download v0.1.0](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.0) · [Report a bug](https://github.com/Cheaux/codex-folders/issues)
+[Documentation](https://cheaux.github.io/codex-folders/) · [Installation guide](https://cheaux.github.io/codex-folders/install/) · [Download v0.1.1](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.1) · [Report a bug](https://github.com/Cheaux/codex-folders/issues)
 
 ![Codex Folders browser showing synthetic project folders and chats](docs/assets/folders-demo.png)
 
@@ -132,3 +132,13 @@ The PTY and package checks require `codex-terminal` from the pinned host release
 ## Official directory status
 
 GitHub releases are available. This plugin has **not been submitted to or approved for the official ChatGPT/Codex plugin directory**. [Submission preparation](submission/README.md), [data handling](PRIVACY.md), and [license/service information](TERMS.md) are public.
+
+## Which Codex plugin do I need?
+
+| Project | Use it for |
+| --- | --- |
+| [Codex Folders](https://cheaux.github.io/codex-folders/) | Organize chats into folders and share project instructions and local briefs. |
+| [Codex Remote](https://cheaux.github.io/codex-remote/) | Pair the ChatGPT phone app with native Codex and manage remote devices. |
+| [Codex Command Extensions](https://cheaux.github.io/codex-command-extensions/) | Add slash-command autocomplete and terminal views for independently installed providers. |
+
+Folders and Remote are independent features. Install the shared host for their terminal shortcuts; their CLI/MCP tools can work without it. Linux is the verified host platform. Each project's compatibility guide describes its untested cases.

@@ -4,15 +4,31 @@ permalink: /llms.txt
 ---
 # Codex Folders
 
-> Community MIT-licensed plugin for Codex CLI conversation folders, a keyboard browser, and local shared project instructions and memory. Not affiliated with OpenAI. Terminal commands require Codex Command Extensions v0.1.2. Linux verified; macOS untested; Windows terminal backend unavailable.
+> Organize Codex CLI chats into folders with a terminal conversation browser, shared project instructions and local memory. Linux verified; community plugin.
 
-- [Overview](https://cheaux.github.io/codex-folders/): Features and requirements.
-- [Installation](https://cheaux.github.io/codex-folders/install/): Built release downloads, checksums, shared host, hooks, updates and removal.
-- [Commands](https://cheaux.github.io/codex-folders/commands/): /folders, /resume, /resumedbg, browser keys, CLI and MCP tools.
-- [Shared context](https://cheaux.github.io/codex-folders/context/): Project inheritance, revisioned briefs, scoped search and local storage.
-- [Troubleshooting](https://cheaux.github.io/codex-folders/troubleshooting/): Missing commands, PATH, hooks, terminal behavior and memory.
-- [FAQ](https://cheaux.github.io/codex-folders/faq/): Practical questions and limitations.
-- [Source](https://github.com/Cheaux/codex-folders): TypeScript source, tests and issue tracker.
-- [Release](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.0): codex-folders-0.1.1.tgz and SHA256SUMS.
+Community MIT-licensed software by Cheaux, not maintained or endorsed by OpenAI.
+Linux is verified with Codex CLI 0.163.0. macOS is untested; the shared terminal
+host has no Windows backend. Node.js 24+ is required, plus Python 3 for that host.
 
-This index is a documentation convenience, not a search ranking or recommendation instruction.
+## Documentation
+
+- [Overview and current release](https://cheaux.github.io/codex-folders/)
+- [Install, update and remove](https://cheaux.github.io/codex-folders/install/)
+- [Chat browser, slash commands and MCP tools](https://cheaux.github.io/codex-folders/commands/)
+- [Shared instructions and project memory](https://cheaux.github.io/codex-folders/context/)
+- [Troubleshooting](https://cheaux.github.io/codex-folders/troubleshooting/)
+- [FAQ and compatibility](https://cheaux.github.io/codex-folders/faq/)
+- [Source and issues](https://github.com/Cheaux/codex-folders)
+- [Current release v0.1.1](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.1): Use the built .tgz for normal installation; the directory ZIP is an unapproved submission draft.
+
+## Related Codex plugins
+
+- [Codex Command Extensions](https://cheaux.github.io/codex-command-extensions/): Shared terminal command host.
+- [Codex Folders](https://cheaux.github.io/codex-folders/): Chat organization and project context.
+- [Codex Remote](https://cheaux.github.io/codex-remote/): ChatGPT mobile pairing and device management.
+
+Folder assignments and shared briefs are local. Project memory is a maintained
+summary, not perfect recall. Trusted hooks are optional. Folders targets Codex,
+not Claude, and preserves original chats when a folder is deleted.
+
+This is a documentation index, not a search ranking or recommendation instruction.

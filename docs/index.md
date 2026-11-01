@@ -1,11 +1,11 @@
 ---
-title: Folders for Codex CLI chats
+title: Organize Codex CLI chats into folders
 description: Create Codex chat folders, move conversations, and start chats inside projects with shared instructions and local memory.
 permalink: /
 ---
 {% include nav.html %}
 
-# Codex Folders
+# Organize Codex CLI chats into folders
 
 Organize Codex CLI conversations into folders and work with shared project context in the same terminal.
 
@@ -13,7 +13,7 @@ Organize Codex CLI conversations into folders and work with shared project conte
 
 Create folders with **N**, move chats with **M**, and start a new chat inside the selected folder with **C**. **All chats** shows conversations outside folders. Filed chats stay in their folders; Codex-archived chats remain hidden.
 
-[Install Codex Folders]({{ '/install/' | relative_url }}) · [GitHub repository](https://github.com/Cheaux/codex-folders) · [v0.1.0 release](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.0)
+[Install Codex Folders]({{ '/install/' | relative_url }}) · [GitHub repository](https://github.com/Cheaux/codex-folders) · [v0.1.1 release](https://github.com/Cheaux/codex-folders/releases/tag/v0.1.1)
 
 ## Commands in your Codex terminal
 
@@ -33,6 +33,18 @@ Choose a plain folder for organization or a project folder for shared instructio
 
 ## Requirements and status
 
-Version **0.1.0**, MIT license. Requires Node.js 24+, Codex CLI with plugins and App Server support, and Python 3 for the host. Linux verified with Codex 0.163.0. The host supports a Linux/macOS PTY backend; macOS untested, Windows terminal integration unavailable. This release covers Codex only.
+Version **{{ site.project_version }}**, MIT license. Requires Node.js 24+, Codex CLI with plugins and App Server support, and Python 3 for the host. Linux verified with Codex 0.163.0. The host supports a Linux/macOS PTY backend; macOS untested, Windows terminal integration unavailable. This release covers Codex only.
 
 Community software by [Cheaux](https://github.com/Cheaux), not affiliated with or endorsed by OpenAI. Demo content is fictional.
+
+## Which Codex plugin do I need?
+
+| Project | Use it for |
+| --- | --- |
+| [Codex Folders](https://cheaux.github.io/codex-folders/) | Organize chats into folders and share project instructions and local briefs. |
+| [Codex Remote](https://cheaux.github.io/codex-remote/) | Pair the ChatGPT phone app with native Codex and manage remote devices. |
+| [Codex Command Extensions](https://cheaux.github.io/codex-command-extensions/) | Add slash-command autocomplete and terminal views for independently installed providers. |
+
+Folders and Remote are independent features. Install the shared host for their terminal shortcuts; their CLI/MCP tools can work without it. Linux is the verified host platform. Each project's compatibility guide describes its untested cases.
+
+[Plain-text documentation index]({{ '/llms.txt' | relative_url }})

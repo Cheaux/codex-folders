@@ -1,7 +1,7 @@
 {
   "name": "codex-folders",
   "version": "0.1.1",
-  "description": "Organize Codex CLI conversations into folders with an in-terminal chat browser and shared project memory.",
+  "description": "Organize Codex CLI chats into folders with a terminal conversation browser, shared project instructions and local memory. Linux verified; community plugin.",
   "type": "module",
   "license": "MIT",
   "engines": {
@@ -53,15 +53,21 @@
     "url": "https://github.com/Cheaux/codex-folders/issues"
   },
   "keywords": [
+    "chat-folders",
     "codex",
     "codex-cli",
     "codex-plugin",
-    "chat-folders",
+    "openai-codex",
     "conversation-manager",
-    "project-memory",
-    "shared-context",
+    "conversation-history",
+    "chat-organization",
     "mcp",
+    "model-context-protocol",
+    "productivity",
+    "project-memory",
     "terminal",
-    "openai"
+    "typescript",
+    "nodejs",
+    "developer-tools"
   ]
 }
